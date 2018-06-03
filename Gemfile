@@ -7,7 +7,7 @@ gem 'pry-rails', '~>0.3', '>=0.3.4'
 gem 'rack-cors', '~>0.4', '>=0.4.0', :require => 'rack/cors'
 gem 'devise_token_auth', '~>0.1', '>=0.1.39'
 gem 'pundit', '~>1.1', '>=1.1.0'
-gem 'exifr', '~> 1.2', '>= 1.2.5'
+gem 'exifr', '1.2.5'
 gem 'mini_magick', '~> 4.5', '>= 4.5.1'
 gem 'geokit-rails', '~>2.2', '>= 2.2.0'
 
@@ -28,7 +28,7 @@ group :development, :test do
   gem 'byebug', '~>9.0', '>=9.0.6'
   gem 'pry-byebug', '~>3.4', '>=3.4.0'
   gem 'httparty', '~>0.14', '>=0.14.0'
-
+  gem 'bcrypt', '~> 3.1.11'
   gem 'rspec-rails', '~> 3.5', '>=3.5.2'
   gem 'mongoid-rspec', '~> 3.0', '>=3.0.0'
   gem 'capybara', '~> 2.10', '>=2.10.1'
