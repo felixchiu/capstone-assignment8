@@ -4,7 +4,6 @@ class ThingImage < ActiveRecord::Base
   acts_as_mappable :through => :image
 
   validates :image, :thing, presence: true
-
   scope :prioritized,-> { order(:priority=>:asc) }
   scope :things,     -> { where(:priority=>0) }
   scope :primary,    -> { where(:priority=>0).first }
@@ -13,7 +12,6 @@ class ThingImage < ActiveRecord::Base
                          .select("thing_images.*")}
   scope :with_image, ->{ joins("right outer join images on images.id = thing_images.image_id")
                          .select("thing_images.*","images.id as image_id")}
-
   scope :with_name,    ->{ with_thing.select("things.name as thing_name")}
   scope :with_caption, ->{ with_image.select("images.caption as image_caption")}
   scope :with_position,->{ with_image.select("images.lng, images.lat")}

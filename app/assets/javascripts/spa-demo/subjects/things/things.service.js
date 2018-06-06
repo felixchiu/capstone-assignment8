@@ -9,7 +9,9 @@
   function ThingFactory($resource, APP_CONFIG) {
     var service = $resource(APP_CONFIG.server_url + "/api/things/:id",
         { id: '@id'},
-        { update: {method:"PUT"} }
+        { 
+          update: {method:"PUT"} 
+        }
       );
     return service;
   }

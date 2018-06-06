@@ -1,0 +1,21 @@
+<div>
+  Select type of things:
+	<select ng-model="$ctrl.selectedType"
+          ng-change="$ctrl.updateThings()"
+          >
+   		<option ng-repeat="x in $ctrl.types"
+   			value="{{x.id}}">
+   			{{x.name}}
+   		</option>
+   	</select>
+<div class="thing-list">
+  <ul class="filtertype things items">
+    <li ng-repeat="item in $ctrl.items | orderBy:'name'"
+      ng-class="{selected: $ctrl.isCurrentThing(item.id)}">
+       <a ng-click="$ctrl.thingClicked(item.id)">
+         <span class="thing_id id">{{item.id}}</span>
+         <span class="name">{{item.name}}</span> 
+       </a>
+    </li>
+  </ul>
+</div>

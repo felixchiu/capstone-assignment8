@@ -10,9 +10,19 @@ class ThingsController < ApplicationController
   def index
     authorize Thing
     things = policy_scope(Thing.all)
+    #things = policy_scope(things)
     @things = ThingPolicy.merge(things)
   end
-
+  def filtertype
+    authorize Thing
+    @things = Thing.all
+    typeid = params['type_id'] ||= nil
+    if typeid
+      puts "inside typeid"
+    @things = @things.by_type(typeid)
+    end
+    render :index
+  end
   def show
     authorize @thing
     things = ThingPolicy::Scope.new(current_user,

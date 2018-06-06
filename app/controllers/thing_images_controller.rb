@@ -13,8 +13,11 @@ class ThingImagesController < ApplicationController
   def index
     authorize @thing, :get_images?
     @thing_images = @thing.thing_images.prioritized.with_caption
+    if params["position"]
+      @thing_images = @thing_images.with_position
+    end
   end
-
+  
   def image_things
     authorize @image, :get_things?
     @thing_images=@image.thing_images.prioritized.with_name

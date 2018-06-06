@@ -35,6 +35,10 @@
       url: "/foos",
       templateUrl: APP_CONFIG.main_page_html
     })
+    .state("filtertypes", {
+      url: "/filtertypes",
+      templateUrl: APP_CONFIG.filtertypes_page_html
+    })
     ; 
 
     //$urlRouterProvider.otherwise("/subjects");

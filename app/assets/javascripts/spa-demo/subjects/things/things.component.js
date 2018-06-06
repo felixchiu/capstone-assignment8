@@ -30,7 +30,7 @@
   thingSelectorTemplateUrl.$inject = ["spa-demo.config.APP_CONFIG"];
   function thingSelectorTemplateUrl(APP_CONFIG) {
     return APP_CONFIG.thing_selector_html;
-  }    
+  }   
 
   ThingEditorController.$inject = ["$scope","$q",
                                    "$state","$stateParams",

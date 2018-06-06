@@ -2,7 +2,9 @@ class ThingPolicy < ApplicationPolicy
   def index?
     true
   end
-
+  def filtertype?
+    true
+  end
   def show?
     true
   end
